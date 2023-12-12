@@ -11,6 +11,44 @@
 */
 
 class Todo {
+  todo = [];
+  
+  add(todo){
+    this.todo.push(todo);
+  }
+  remove(index){
+    if(index >=0 && index < this.todo.length ){
+      this.todo.splice(index,1);
+    }else {
+      console.log("invalid index for removal");
+    }
+  }
+  
+  update(index, updatedTodo){
+    if(index >= 0 && index < this.todo.length){
+      this.todo[index] = updatedTodo;
+    }else{
+      console.log("Invalid index for update")
+    }
+  }
+  
+  getAll() {
+   return this.todo;
+  }
+  
+  get(indexOfTodo) {
+    if(indexOfTodo >= 0 && indexOfTodo < this.todo.length){
+      return this.todo[indexOfTodo] ;
+    }else {
+      console.log("Invalid index for retrieval");
+      return null;
+    }
+  }
+  
+  clear() {
+    this.todo = []
+  }
+
 
 }
 
